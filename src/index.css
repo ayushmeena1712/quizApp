@@ -1,0 +1,110 @@
+/* Global Styles */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #f6d365, #fda085);
+  color: #333;
+}
+
+/* Container for the entire app */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px;
+}
+
+/* General screen/card style */
+.screen {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  max-width: 600px;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* Button styling */
+.button {
+  padding: 12px 25px;
+  font-size: 16px;
+  margin-top: 20px;
+  cursor: pointer;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(90deg, #6a11cb, #2575fc);
+  color: #fff;
+  transition: transform 0.2s ease;
+}
+
+.button:hover {
+  transform: scale(1.03);
+}
+
+.button:disabled {
+  background: #cccccc;
+  cursor: not-allowed;
+}
+
+/* Option button styling */
+.option-button {
+  display: block;
+  width: 100%;
+  margin: 12px 0;
+  padding: 12px;
+  font-size: 16px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  cursor: pointer;
+  background-color: #fff;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.option-button:hover {
+  border-color: #2575fc;
+}
+
+.option-button.correct {
+  background-color: #4caf50;
+  color: #fff;
+  border-color: #4caf50;
+}
+
+.option-button.incorrect {
+  background-color: #f44336;
+  color: #fff;
+  border-color: #f44336;
+}
+
+/* Score bar container */
+.score-bar-container {
+  position: relative;
+  background: #e0e0e0;
+  border-radius: 8px;
+  height: 24px;
+  width: 100%;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+/* Score bar fill */
+.score-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #6a11cb, #2575fc);
+  border-radius: 8px;
+  transition: width 0.5s ease;
+}
+
+/* Score text overlay */
+.score-text {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 14px;
+  font-weight: bold;
+  color: #fff;
+  line-height: 24px;
+}
