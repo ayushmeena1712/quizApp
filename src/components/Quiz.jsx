@@ -5,7 +5,7 @@ const shuffleArray = (array) => {
   let newArray = [...array]
   for (let i = newArray.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1))
-    ;[newArray[i], newArray[j]] = [newArray[j], newArray[i]]
+      ;[newArray[i], newArray[j]] = [newArray[j], newArray[i]]
   }
   return newArray
 }
@@ -32,7 +32,7 @@ const Quiz = ({ quizData, finishQuiz }) => {
   const currentQuestion = questions[currentIndex]
 
   const handleOptionSelect = (option) => {
-    if (selectedOption !== null) return 
+    if (selectedOption !== null) return
     setSelectedOption(option)
     const isCorrect = option.is_correct
     const correctMarks = parseFloat(correct_answer_marks)
@@ -63,18 +63,17 @@ const Quiz = ({ quizData, finishQuiz }) => {
         totalQuestions={questions.length}
         maxScore={parseFloat(correct_answer_marks) * questions.length}
       />
-      <h2>{currentQuestion.description}</h2>
+      <h2 style={{ textAlign: "justify", fontSize: "18px", fontWeight: "semibold" }}>{currentQuestion.description}</h2>
       <div>
         {currentOptions.map(option => (
           <button
             key={option.id}
-            className={`option-button ${
-              selectedOption
-                ? option.id === selectedOption.id
-                  ? option.is_correct ? 'correct' : 'incorrect'
-                  : ''
+            className={`option-button ${selectedOption
+              ? option.id === selectedOption.id
+                ? option.is_correct ? 'correct' : 'incorrect'
                 : ''
-            }`}
+              : ''
+              }`}
             onClick={() => handleOptionSelect(option)}
             disabled={selectedOption !== null}
           >
